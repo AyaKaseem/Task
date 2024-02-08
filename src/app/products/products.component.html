@@ -1,0 +1,42 @@
+<head>
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" rel="stylesheet">
+</head>
+
+<div class="container">
+  <ul class="nav nav-tabs justify-content-end">
+    <li class="nav-item">
+      <a class="nav-link active" href="#">ALL</a>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link" href="#">Food</a>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link" href="#">Non Food</a>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link" href="#">Fashion&Linen</a>
+    </li>
+  </ul>
+</div>
+<div class="container">
+<div class="dropdown-menu">
+  <a class="dropdown-item" href="#">Tablet</a>
+  <a class="dropdown-item" href="#">Smartphone</a>
+</div>
+</div>
+
+    <div class="container mt-5">
+      <div class="row">
+        <div class="col-md-3" *ngFor="let item of items; let i = index">
+          <div class="card mb-4">
+              <i class="far fa-heart fa-2x text-success" style="position: absolute; top: 5px; right: 10px;"></i>
+            </div>
+            <img class="card-img-top" [src]="item.image" alt="Card image cap">
+            <div class="card-body">
+              <p class="card-title text-secondary">{{ item.name }}</p>
+              <p class="card-text">EGP {{ item.price }}</p>
+              <button type="button" class="btn btn-outline-success rounded-pill text-body" style=" font-weight: bold; padding: -5px;" (click)="addToCart(item)"><span style="padding-left: 10px; padding-right: 10px;"> Add to Cart</span></button>
+            </div>
+          </div>
+      </div>
+    </div>
